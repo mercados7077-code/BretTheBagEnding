@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE GRAND FINALE!</title>
+    <style>
+        /* --- General Styling and Background --- */
+        body {
+            font-family: 'Georgia', serif;
+            text-align: center;
+            margin: 0;
+            padding: 50px 0; /* Add top/bottom padding for breathing room */
+            background: linear-gradient(135deg, #1f4068 0%, #162447 100%); /* Deep Blue/Purple Gradient */
+            color: #ffffff; /* White text for contrast */
+            
+            /* KEY CHANGES FOR SCROLLING: */
+            /* Removed min-height: 100vh; */
+            /* Removed overflow: hidden; */
+            /* Changed display properties to allow content to flow naturally */
+            display: block; 
+        }
+
+        /* Center the container manually and make sure it doesn't try to fill the viewport height */
+        .container {
+            background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white box */
+            padding: 40px 60px;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.5); /* Gold glow shadow */
+            backdrop-filter: blur(5px); /* Subtle glass effect */
+            animation: fadeIn 2s ease-out;
+            max-width: 800px;
+            margin: 0 auto; /* Center container horizontally */
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        h1 {
+            color: #FFD700; /* Gold */
+            font-size: 4.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; /* Neon pink glow */
+            animation: bounce 1s infinite alternate; /* Bouncing effect */
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+
+        /* --- Main Message --- */
+        .main-message {
+            font-size: 1.8em;
+            color: #d1d1d1;
+            margin: 20px 0 40px;
+            max-width: 600px;
+            line-height: 1.4;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Special Ending Title --- */
+        .ending-title {
+            font-size: 3.5em;
+            font-weight: 900;
+            color: #4cff50; /* Bright Green */
+            padding: 15px 30px;
+            border: 5px solid #4cff50;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 0 20px rgba(76, 255, 80, 0.8);
+            letter-spacing: 3px;
+            animation: pulse 1.5s infinite;
+            margin-top: 30px;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* --- Image Styling --- */
+        .bret-image {
+            max-width: 100%; 
+            height: auto;
+            border-radius: 15px; 
+            margin-top: 40px; 
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.3); 
+        }
+
+        .image-caption {
+            font-size: 1.1em;
+            color: #FFD700; 
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        /* --- Confetti Effect (Pure CSS) --- */
+        /* Note: Confetti is still positioned absolutely relative to the body, 
+           but the scroll should now be enabled. */
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            background-color: var(--color);
+            opacity: 0;
+            animation: fall 10s linear infinite;
+        }
+
+        .confetti-piece:nth-child(1) { --color: #ff00ff; left: 10%; animation-delay: 0s; }
+        .confetti-piece:nth-child(2) { --color: #00ffff; left: 20%; animation-delay: 1.5s; }
+        .confetti-piece:nth-child(3) { --color: #ff0000; left: 30%; animation-delay: 3s; }
+        .confetti-piece:nth-child(4) { --color: #00ff00; left: 40%; animation-delay: 4.5s; }
+        .confetti-piece:nth-child(5) { --color: #ffff00; left: 50%; animation-delay: 6s; }
+        .confetti-piece:nth-child(6) { --color: #ff00ff; left: 60%; animation-delay: 7.5s; }
+        .confetti-piece:nth-child(7) { --color: #00ffff; left: 70%; animation-delay: 9s; }
+        .confetti-piece:nth-child(8) { --color: #ff0000; left: 80%; animation-delay: 2s; }
+        .confetti-piece:nth-child(9) { --color: #00ff00; left: 90%; animation-delay: 5s; }
+
+
+        @keyframes fall {
+            0% { top: -20%; transform: rotate(0deg); opacity: 1; }
+            100% { top: 120%; transform: rotate(720deg); opacity: 1; }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 { font-size: 3em; }
+            .main-message { font-size: 1.5em; }
+            .ending-title { font-size: 2.5em; padding: 10px 20px; }
+            .container { padding: 30px; }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2.5em; }
+            .main-message { font-size: 1.2em; margin: 15px 0 25px;}
+            .ending-title { font-size: 1.8em; padding: 8px 15px; letter-spacing: 1px;}
+            .container { padding: 20px; border-radius: 10px; }
+            .image-caption { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+
+
+    <div class="container">
+        <h1>TREASURE FOUND!</h1>
+        
+        <p class="main-message">If you've made it to this page, you must have found the "easter egg" inside Bret The Bag. Great job! **You Won!** You are **very smart and cool**.</p>
+        
+        
+        <img src="Bret_the_Bag.jpg" alt="Bret the Bag on his birthday" class="bret-image">
+        <p class="image-caption">Bret the Bag on his birthday with a one-of-a-kind signature of the author</p>
+
+        <p class="ending-title">
+            Bret the Bag Ending
+        </p>
+    
+        <p class="main-message" style="margin-top: 20px; font-size: 1.2em; color: #FFD700;">
+            The journey is complete! You are a master adventurer!
+        </p>
+    </div>
+
+</body>
+</html>
